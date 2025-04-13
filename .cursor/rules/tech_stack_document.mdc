@@ -1,0 +1,34 @@
+## Tech Stack Document
+
+### Frontend:
+- **Framework**: React (with Next.js for SSR)
+- **UI Library**: Tailwind CSS, shadcn/ui
+- **State Management**: React Context / Redux (if needed at scale)
+- **Charting**: Recharts or Chart.js for performance visuals
+- **Authentication**: Custom JWT-based authentication (avoiding paid providers)
+
+### Backend:
+- **Language**: Python
+- **Framework**: FastAPI (leveraging existing open-source tools for stock data extraction)
+- **Database**: PostgreSQL (via SQLAlchemy or Tortoise ORM)
+- **Caching**: Redis for screener results
+- **Search**: OpenSearch (Elasticsearch-compatible, open-source)
+
+### DevOps:
+- **Hosting**: Render, Railway, or Fly.io (Free-tier options for Dockerized backend)
+- **Frontend Deployment**: Vercel (Free-tier)
+- **CI/CD**: GitHub Actions (Free for public/private repos)
+- **Monitoring**: Self-hosted Prometheus + Grafana (via Docker Compose)
+- **APIs**: Alpha Vantage (free tier), yfinance (free)
+- **Local Development**: Docker Compose setup for frontend, backend, PostgreSQL, Redis, and OpenSearch
+- **One-click Deployment**: Enable using a pre-configured GitHub repo + Docker Compose + Railway/Fly.io deploy buttons for quick launch
+
+### Payment Integration:
+- **Stripe or Razorpay**: For managing subscriptions, trials, and webhooks (both support free tier for small projects)
+
+### Security:
+- JWT-based authentication
+- HTTPS for all endpoints
+- Rate limiting and request throttling using FastAPI middleware or nginx
+
+

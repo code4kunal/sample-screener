@@ -1,0 +1,92 @@
+1. User Onboarding Flow
+User receives invite link
+
+Lands on signup page
+
+Completes registration and sets up profile
+
+Lands on screener list dashboard
+
+2. Screener Usage Flow
+User selects a screener from the dashboard
+
+Redirected to individual screener page
+
+Views analytics and performance metrics
+
+Can optionally run a backtest
+
+Option to apply results to watchlist
+
+3. Case Study Flow
+User navigates to "Case Studies"
+
+Selects a category or filter
+
+Opens a case study to view details
+
+May comment or save for later (MVP+)
+
+4. Payment Flow
+User completes 2-week trial
+
+System prompts for plan selection
+
+User selects monthly/yearly plan
+
+Redirect to payment gateway (Stripe/Razorpay)
+
+Post-payment, access is upgraded
+
+5. Admin Flow
+Admin logs in to dashboard
+
+Sends invites, manages users
+
+Uploads or edits screeners/case studies
+
+Monitors analytics (conversion, churn, screener usage)
+
+6. Error and Notification Flow
+Failed logins trigger user alerts
+
+Subscription end prompts via email
+
+Screener run errors surface on UI
+
+7. Logout/Session Expiry Flow
+User logs out or token expires
+
+Redirected to login screen
+
+8. Data Flow (Stock Data Collection & Refresh)
+Historical stock data is fetched using the yfinance library
+
+Transactional user and app data is stored in a Dockerized PostgreSQL instance
+
+Stock price and financial analytics data is stored in a Dockerized key-value store like DuckDB or RocksDB for lightweight, high-performance querying
+
+A daily cron job runs via FastAPI background tasks or an external scheduler to refresh stock data
+
+Sectoral and benchmark index data (e.g., NIFTY 50, BANKNIFTY, NIFTY IT, NIFTY FMCG) is also fetched and updated regularly to support comparative analysis
+
+Financial statements (income, balance sheet, cash flow) are fetched during quarterly earnings periods and stored similarly
+
+Efficient caching (using Redis or local in-memory store) is used to handle bulk data access and reduce repeated queries
+
+This data supports analytics, screeners, and backtesting in near real-time
+
+9. Backtesting and Analytics Flow
+User selects a screener and clicks "Run Backtest"
+
+The backend fetches relevant historical stock and financial data
+
+Executes the screener logic against past data based on selected timeframe
+
+Results include metrics like return %, max drawdown, Sharpe ratio, and trade history
+
+Backend caches results based on input params to avoid recomputation
+
+Analytics section visualizes performance trends and compares screener results with NSE benchmark indices (e.g., NIFTY 50, BANKNIFTY, MIDCAPNIFTY, CNXSMALLCAP) as well as relevant sectoral indices (e.g., NIFTY IT, NIFTY FMCG, NIFTY Pharma)
+
+User may download backtest results or save configuration for future comparison

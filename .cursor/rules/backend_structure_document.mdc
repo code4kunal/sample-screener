@@ -1,0 +1,47 @@
+## Backend Structure Document
+
+### Overview
+The backend is responsible for managing authentication, user profiles, screener logic, analytics, case studies, and payment handling. It will expose APIs consumed by the frontend and be built with scalability, performance, and security in mind.
+
+### Key Modules
+
+1. **Authentication & Authorization**
+   - User registration/login (via invite)
+   - JWT-based session management
+   - Role-based access control (User, Admin)
+
+2. **User Management**
+   - Profile CRUD operations
+   - Subscription status
+   - Preferences and saved screeners
+
+3. **Screener Engine**
+   - CRUD for stock screeners
+   - Execution engine for running screeners on live/historical data
+   - Backtesting module
+
+4. **Analytics Module**
+   - Screener performance tracking
+   - Historical trend storage
+   - API for charting/visualizations
+
+5. **Case Study Module**
+   - Markdown/HTML based content storage
+   - Authoring/editing capabilities
+   - Filtering and tagging support
+
+6. **Payment Gateway Integration**
+   - Stripe/Razorpay APIs
+   - Trial tracking logic
+   - Webhook handling for renewals, failures
+
+7. **Admin Dashboard Tools**
+   - User invitation management
+   - Screener/case study moderation
+   - Reporting and analytics
+
+8. **Notification System** (Optional/MVP+)
+   - Email triggers (welcome, reminders, billing, etc.)
+   - System alerts for admins
+
+

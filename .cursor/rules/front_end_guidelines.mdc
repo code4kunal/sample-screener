@@ -1,0 +1,40 @@
+## Frontend Guidelines Document
+
+### Design System
+- Use Tailwind CSS for utility-first styling
+- Adopt shadcn/ui for components: modals, buttons, tabs, cards
+- Apply consistent spacing, font hierarchy, and color palette
+- All pages should follow a responsive grid layout
+
+### Page Structure
+- **Layout**: Global header, side navigation (for dashboards), and content body
+- **Routing**: Next.js dynamic routes for screener and case study pages
+
+### Components Breakdown
+1. **Auth Pages**: Login, Signup (with invite code input)
+2. **Dashboard**:
+   - Screener List with filters and performance badges
+   - Profile Overview and Subscription Plan
+3. **Screener Page**:
+   - Screener description
+   - Chart component for analytics
+   - Run backtest form and results
+4. **Case Studies Page**:
+   - List of articles with filters (date, tag)
+   - Detail view with code snippets and images
+5. **Admin Panel**:
+   - User table, Invite management
+   - Screener and Case Study management forms
+
+### UX Considerations
+- Use animations (Framer Motion) for smoother transitions
+- Toast notifications for actions (save, errors, success)
+- Skeleton screens for loading states
+- Empty state components with helpful messages
+
+### Accessibility
+- Use semantic HTML where possible
+- Keyboard navigability for major actions
+- ARIA roles for modals and dynamic content
+
+

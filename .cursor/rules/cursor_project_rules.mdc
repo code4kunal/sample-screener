@@ -1,0 +1,39 @@
+## Cursor Project Rules Document
+
+### Naming Conventions
+- Use kebab-case for file names (`screener-list.tsx`)
+- Use camelCase for variable and function names
+- Use PascalCase for component names (`ScreenerCard`, `CaseStudyList`)
+
+### Folder Structure Guidelines
+- Group by domain (e.g., `screeners/`, `cases/`, `payments/`)
+- Separate shared components into `/components`
+- Place shared hooks/utilities under `/lib` or `/utils`
+
+### Code Standards
+- Use TypeScript for all frontend and backend code
+- All components must be typed (no implicit `any`)
+- Prefer `async/await` over promises
+- Handle API errors gracefully (try/catch + toast notification)
+
+### Version Control
+- Use feature branches (`feature/screener-engine`, `fix/login-bug`)
+- Pull requests must be peer-reviewed before merge
+- Commit message format: `[component] short description`, e.g., `[auth] add token refresh logic`
+
+### Deployment & Env
+- Use `.env.local` for local dev and `.env.production` for deployment
+- Never commit `.env` files
+- Use Vercel for frontend, AWS/GCP for backend services
+
+### Testing (MVP+)
+- Unit tests for core logic (e.g., screener filtering)
+- E2E tests for critical flows (signup, payment)
+- Use Jest + React Testing Library
+
+### Collaboration Notes
+- Regular standups or async check-ins every 2-3 days
+- Document key flows in Notion or MD files inside `/docs`
+- Use GitHub Issues + Labels for task tracking
+
+
